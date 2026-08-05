@@ -1,14 +1,12 @@
 def calcular_total(valor, cupom):
-    # Verifica tentativa de usar dois cupons
     if cupom == "AMBOS":
         return "Erro: Não é permitido utilizar mais de um cupom."
 
     total = valor
 
-    # Aplicação dos cupons
     if cupom == "PROMO10":
         if valor >= 100:
-            total *= 0.90  # Desconto de 10%
+            total *= 0.90 
         else:
             return "Erro: O cupom PROMO10 só pode ser usado em compras acima de R$100,00."
 
@@ -17,7 +15,6 @@ def calcular_total(valor, cupom):
         if total < 0:
             total = 0
 
-    # Verificação do frete
     if total >= 200:
         frete = 0
     else:
@@ -33,7 +30,6 @@ def calcular_total(valor, cupom):
     )
 
 
-# Casos de teste
 casos = [
     (200.00, "NENHUM"),
     (199.99, "NENHUM"),
